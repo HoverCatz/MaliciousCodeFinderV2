@@ -1,0 +1,2 @@
+Name: MaliciousCodeFinderV2
+Main-Class: obzcu.re.mcf.Finder
