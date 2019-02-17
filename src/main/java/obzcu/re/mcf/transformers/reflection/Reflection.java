@@ -1,9 +1,17 @@
 package obzcu.re.mcf.transformers.reflection;
 
 import obzcu.re.mcf.transformers.AbstractTransformer;
+import org.objectweb.asm.tree.ClassNode;
+
+import java.util.List;
 
 public class Reflection extends AbstractTransformer
 {
+
+    public Reflection(List<ClassNode> classNodes)
+    {
+        super(classNodes, Reflection.class.getName());
+    }
 
     @Override
     public boolean first()
@@ -14,6 +22,11 @@ public class Reflection extends AbstractTransformer
     @Override
     public boolean run()
     {
+
+        for (ClassNode node : classNodes)
+        {
+            log(node.name + " - " + node.superName);
+        }
 
         return false;
     }
